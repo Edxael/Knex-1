@@ -7,7 +7,7 @@ export default class extends React.Component{
         const getData = () => {
             console.log("----------------------------------- \n  GET all the Records:")
 
-            axios.get('http://localhost:8080/zyphex')
+            axios.get('http://localhost:8080/mydb')
                 .then( (response) => { return response.data } )
                 .then( (data) => { console.log(data) })
                 .catch( (error) => { console.log(error) })
