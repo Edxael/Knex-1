@@ -1,6 +1,7 @@
 # Dev Info
 
 ### KNEX Docs
+http://knexjs.org/
 https://www.npmjs.com/package/knex
 
 
