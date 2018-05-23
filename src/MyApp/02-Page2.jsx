@@ -18,13 +18,12 @@ export default class extends React.Component{
 
         return(
             <div>
-                <h1>All Records</h1>
+                <h1>All Records...</h1>
 
                 <div>
                     
                     { this.state.singers.map((x) => { return <Template key={x.email} data={x} /> }) }
                     
-                    <br/>
                 </div>
             </div>
         )

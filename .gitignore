@@ -1,3 +1,5 @@
 # Files & Directories to ignore
 
 node_modules
+
+.env

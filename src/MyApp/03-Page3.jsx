@@ -6,8 +6,7 @@ export default class extends React.Component{
     render(){
 
         const post1 = () => {
-            console.log("----------------------------------- \n  POST a new Record: \n ")
-            // let info = { name: this.state.name, email: this.state.email, country: this.state.country }
+            console.log("--- \n  POST a new Record: \n ")
 
             axios.post('http://localhost:8080/api/singers', { name: this.state.name, email: this.state.email, country: this.state.country } )
                 .then( (response) => { console.log(" \n Response from the DB-Server: ", response) })
