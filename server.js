@@ -26,6 +26,20 @@ app.get('/', (req, res) => {      // Route to serve build React-App.
         // ---[ API ]---
 
 app.use('/api', router)      // all of our routes will be prefixed with /api
+
+
+        // ---[ '/columInfo' ]-----------------------------------------------
+router.route('/columInfo')
+
+.get((req, res) => {  // Get all Records from DB
+    console.log("Send all records to FE.")
+    db.select().from('Profiles').columnInfo().then((data) => {
+        res.send(data)
+    }) 
+})
+
+
+        // ---[ '/singers' ]-----------------------------------------------
 router.route('/singers')
 
 .get((req, res) => {  // Get all Records from DB
@@ -39,11 +53,11 @@ router.route('/singers')
     console.log( 'Data from FE:', req.body.name, " - ", req.body.country, " - ", req.body.email )
     db.insert({ name: req.body.name, country: req.body.country, email: req.body.email }).into('Profiles').then((data) => {
         res.send(data)
-    }) 
+    }).catch( (error) => { res.send(error) })
 })
 
 
-
+        // ---[ '//singers/:email' ]-----------------------------------------------
 router.route('/singers/:email')    // delete a singer record using 'email' ( URL: http://localhost:8080/api/singers/:email )
 
 .delete( (req, res) => {  
@@ -65,6 +79,8 @@ router.route('/singers/:email')    // delete a singer record using 'email' ( URL
 
 
  
+
+
 // === [ SERVER LISTENER ]===========================
 app.listen((process.env.PORT || 8080), (err) => {
     if(err){ throw err }

@@ -15,6 +15,13 @@ export default class extends React.Component{
             this.setState({ name: '', email: '', country: '' })
         }
 
+        const getColumInfo = () => {
+            console.log("GCI")
+            axios.get('http://localhost:8080/api/columInfo')
+            .then( (response) => { console.log(response.data) } )
+            .catch( (error) => { console.log(error) })
+        }
+
         return(
             <div>
                 <h1>Add Record to DataBase.</h1>
@@ -27,6 +34,10 @@ export default class extends React.Component{
                 <br/><br/>
 
                 <button onClick={ post1 } >Add Record</button>
+                <br/><br/>
+
+                <h3>Get Colum-Info:</h3>
+                <button onClick={getColumInfo} >GCI</button>
 
             </div>
         )
