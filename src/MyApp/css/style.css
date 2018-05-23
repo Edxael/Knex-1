@@ -32,3 +32,35 @@ body{
 .menuButton:hover{
     background-color: rgba(170, 252, 180, 0.823);
 }
+
+
+
+
+/* ===[ TEMPLATE.JSX ]======================================= */
+.listCont{
+    text-align: left;
+}
+
+
+
+
+/* ===[ TEMPLATE.JSX ]======================================= */
+.Temp-Cont{
+    border: 1px solid black;
+    background-color: rgb(198, 194, 255);
+    text-align: left;
+    margin-bottom: 7px;
+    padding: 15px;
+    text-align: center;
+}
+
+.Tem-Inp{
+    width: 80%;
+    margin-bottom: 3px;
+    padding-left: 6px;
+    background-color: rgb(255, 248, 239);
+}
+
+.Buttons-Cont{
+    
+}

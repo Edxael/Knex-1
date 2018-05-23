@@ -1,26 +1,30 @@
 import React from 'react'
 import axios from 'axios'
+import Template from './98-Template'
 
 export default class extends React.Component{
+    state = { singers: [] }
+
+    async componentWillMount(){
+        let sRecords = await axios.get('http://localhost:8080/api/singers')
+            .then( (response) => { return response.data } )
+            .catch( (error) => { console.log(error) })
+
+        await console.log(sRecords)
+        await this.setState({ singers: sRecords })
+    }
+
     render(){
-
-        const getData = () => {
-            console.log("--- \n  GET all the Records:")
-
-            axios.get('http://localhost:8080/api/singers')
-                .then( (response) => { return response.data } )
-                .then( (data) => { console.log(data) })
-                .catch( (error) => { console.log(error) })
-        }
 
         return(
             <div>
-                <h1>Page 2</h1>
+                <h1>All Records</h1>
 
                 <div>
-                    <h4>GET ALL</h4>
-                    <button onClick={ getData }>GET All Data</button>
-                    <br/><br/>
+                    
+                    { this.state.singers.map((x) => { return <Template key={x.email} data={x} /> }) }
+                    
+                    <br/>
                 </div>
             </div>
         )

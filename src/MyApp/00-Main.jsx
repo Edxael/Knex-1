@@ -17,8 +17,8 @@ export default class extends React.Component{
             
                     <div className="menu1">
                         <Link className="menuButton" to="/">HOME</Link>
-                        <Link className="menuButton" to="/2">PAGE-2</Link>
-                        <Link className="menuButton" to="/3">PAGE-3</Link>
+                        <Link className="menuButton" to="/2">All Records</Link>
+                        <Link className="menuButton" to="/3">Add Record</Link>
                     </div>
             
                     <hr/>
