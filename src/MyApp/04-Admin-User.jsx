@@ -84,7 +84,7 @@ export default class extends React.Component{
                     <div>
 
                         {   this.state.s2update ? this.state.allSingers.filter((z) => { return z.email === this.state.s2update })
-                                .map((x) => {return <div>
+                                .map((x) => {return <div className="singerProfile" >
                                                         <div><strong>Name:</strong>{x.name}</div>
                                                         <div><strong>Country:</strong>{x.country}</div>
                                                         <div><strong>Email:</strong>{x.email}</div>
@@ -101,7 +101,7 @@ export default class extends React.Component{
                         {       
                             this.state.edit ? 
                                 //=====================================================================================================================
-                                <div>
+                                <div className="edit-true" >
                                     <p>Edit</p>
 
                                     <p>What doe the input will update</p>
@@ -121,7 +121,7 @@ export default class extends React.Component{
                                     }
                                 </div>
                             :   //=====================================================================================================================
-                                <div>
+                                <div className="edit-false" >
                                     <p>User Mode</p>
                                     <br/>
 

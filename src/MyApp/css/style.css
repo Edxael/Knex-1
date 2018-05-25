@@ -72,3 +72,18 @@ body{
 .contentHR{
     width: 60%;
 }
+
+.singerProfile{
+    background-color: rgb(170, 236, 253);
+    padding: 15px;
+}
+
+.edit-false{
+    background-color: rgb(213, 170, 253);
+    padding: 15px;
+}
+
+.edit-true{
+    background-color: rgb(193, 253, 170);
+    padding: 15px;
+}
