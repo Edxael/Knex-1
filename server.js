@@ -58,7 +58,7 @@ router.route('/singers')
 
 
         // ---[ '//singers/:email' ]-----------------------------------------------
-router.route('/singers/:email')    // delete a singer record using 'email' ( URL: http://localhost:8080/api/singers/:email )
+router.route('/singers/:email')    // delete or Full-Update a singer record using 'email' ( URL: http://localhost:8080/api/singers/:email )
 
 .delete( (req, res) => {  
     console.log("Delet User with email: ", req.params.email)
@@ -77,6 +77,18 @@ router.route('/singers/:email')    // delete a singer record using 'email' ( URL
     }) 
 })
 
+
+// ---[ '//singers/:email' ]-----------------------------------------------
+router.route('/singers/up/:email')    // delete or Full-Update a singer record using 'email' ( URL: http://localhost:8080/api/singers/:email )
+
+.put( (req, res) => {  
+    console.log("Up User with email: ", req.params.email)
+    console.log("With data2: ", req.body )
+    db.select().from('Profiles').where('email', req.params.email).update(req.body).then((data) => {
+        console.log("Record Updated. ")
+        res.send({ success: "Record Updated" })
+    }) 
+})
 
  
 

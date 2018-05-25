@@ -2,25 +2,41 @@ import React from 'react'
 import axios from 'axios'
 
 export default class extends React.Component{
-    state = { name: '', country: '', email: '' }
+    state = { name: '', country: '', email: '', show: false, dbtheaders: [] }
     render(){
 
-        const post1 = () => {
+
+
+        const post1 = async () => {
             console.log("--- \n  POST a new Record: \n ")
-
-            axios.post('http://localhost:8080/api/singers', { name: this.state.name, email: this.state.email, country: this.state.country } )
-                .then( (response) => { console.log(" \n Response from the DB-Server: ", response) })
+            await axios.post('http://localhost:8080/api/singers', { name: this.state.name, email: this.state.email, country: this.state.country } )
+                .then( (response) => { return response })
                 .catch( (error) => { console.log(error) })
-
-            this.setState({ name: '', email: '', country: '' })
+            await this.setState({ name: '', email: '', country: '' })
         }
 
-        const getColumInfo = () => {
+
+
+
+
+        const getColumInfo = async () => {
             console.log("GCI")
             axios.get('http://localhost:8080/api/columInfo')
-            .then( (response) => { console.log(response.data) } )
-            .catch( (error) => { console.log(error) })
+            .then( (response) => { 
+
+                console.log(response.data) 
+
+                let tkeys = Object.keys(response.data)
+                console.log(tkeys)
+                this.setState({ dbtheaders: Object.keys(response.data) })
+            
+            }).catch( (error) => { console.log(error) })
+
+            this.setState({ show: true })
         }
+
+
+
 
         return(
             <div>
@@ -36,8 +52,22 @@ export default class extends React.Component{
                 <button onClick={ post1 } >Add Record</button>
                 <br/><br/>
 
+                <hr/>
+
                 <h3>Get Colum-Info:</h3>
                 <button onClick={getColumInfo} >GCI</button>
+
+                { this.state.show ? 
+                        <div>
+                            <br/>
+
+                            <select>
+                                { this.state.dbtheaders.map((x) => { return <option key={x} value={ x } >{x}</option> }) }
+                            </select>
+                        </div> 
+                    : 
+                        <div>NO</div> 
+                }
 
             </div>
         )
