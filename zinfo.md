@@ -13,6 +13,8 @@ https://www.youtube.com/watch?v=QNw9q4YXR4E
 Github Cheat-Sheet to connect: Express to Postgress:
 https://gist.github.com/laurenfazah/e0b0033cdc40a313d4710cc04e654556
 
+use resource above to find out different methods to manipulate the database.
+
 
 -----------------------
 ---update the code---
