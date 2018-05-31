@@ -21,3 +21,6 @@ This is a personalized template to spin a quick React.js App
 Features:
 
 01-React-Router
+
+---------------------------------------------------
+By: Edmundo Rubio
