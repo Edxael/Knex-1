@@ -16,5 +16,9 @@ https://gist.github.com/laurenfazah/e0b0033cdc40a313d4710cc04e654556
 use resource above to find out different methods to manipulate the database.
 
 
+update code now.
+
+ls
+
 **--------------------**
  ---update the code---
