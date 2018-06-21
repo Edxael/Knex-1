@@ -9,6 +9,7 @@ const router = express.Router()
  
  
  
+
 // ===[ MIDDLEWARE ]=================================
 app.use(express.static(path.join(__dirname, 'build')))
 app.use(require('./ExpressServerFiles/headers'))
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
  
  
+
 
  
 // ===[ ROUTES ]=====================================
@@ -76,6 +78,8 @@ router.route('/singers/:email')    // delete or Full-Update a singer record usin
         res.send({ success: "Record Updated" })
     }) 
 })
+
+
 
 
 // ---[ '//singers/:email' ]-----------------------------------------------
