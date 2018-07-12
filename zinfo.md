@@ -17,6 +17,8 @@ use resource above to find out different methods to manipulate the database.
 Update method to access the database.
 
 Pre part for atomatization....
+read data from XML to be send to the DataBase...
+
 
 **--------------------**
  By: Edmundo Rubio.
